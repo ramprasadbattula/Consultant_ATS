@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: sqlcontainer
+    environment:
+      MYSQL_ROOT_PASSWORD: ramuP@0125
+      MYSQL_DATABASE: consultant_ats
+      MYSQL_USER: root
+      MYSQL_PASSWORD: ramuP@0125
+    ports:
+      - "3308:3306"
+    networks:
+      - networkmysql
+
+  springboot-app:
+    image: my-springboot-app:latest
+    container_name: consultant_ats
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql-container:3306/mydatabase
+      SPRING_DATASOURCE_USERNAME:  root
+      SPRING_DATASOURCE_PASSWORD: ramuP@0125
+    ports:
+      - "8081:8081"
+    depends_on:
+      - mysql
+    networks:
+      - networkmysql
+
+
+networks:
+  networkmysql:
+    driver: bridge

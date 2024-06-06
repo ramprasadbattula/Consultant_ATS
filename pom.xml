@@ -7,6 +7,18 @@
         <version>3.3.0</version>
         <relativePath/>
     </parent>
+    <distributionManagement>
+    <repository>
+  <id>rbattula0566</id>
+  <url>https://pkgs.dev.azure.com/rbattula0566/_packaging/rbattula0566/maven/v1</url>
+  <releases>
+    <enabled>true</enabled>
+  </releases>
+  <snapshots>
+    <enabled>true</enabled>
+  </snapshots>
+</repository>
+</distributionManagement>
     <groupId>com.example</groupId>
     <artifactId>Consultant_ATS</artifactId>
     <version>0.0.1-SNAPSHOT</version>
@@ -15,6 +27,7 @@
     <properties>
         <java.version>17</java.version>
     </properties>
+   
     <dependencies>
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -69,4 +82,5 @@
             </plugin>
         </plugins>
     </build>
+  
 </project>
